@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 50%; /* Establece el ancho de la imagen al 50% del contenedor, ajusta según sea necesario */
+  max-width: 300px; /* O un tamaño máximo que prefieras */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+  border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+  margin-bottom: 24px; /* Ajusta el margen inferior de la imagen */
+}
+
+p{
+  text-align: center;
+  color: grey;
+}
+
+ion-button {
+  width: 30%;
+  margin: 0 auto;
+}

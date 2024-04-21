@@ -1,0 +1,71 @@
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-title>Crear una cuenta nueva</ion-title>
+  <br>
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <!-- Nombre de usuario -->
+    <ion-item>
+      <ion-input type="text" required [(ngModel)]="username" name="username" #usernameModel="ngModel" label="Nombre de usuario" labelPlacement="floating" helperText="Ingresa tu nombre de usuario" errorText="El nombre es obligatorio"></ion-input>
+    </ion-item>
+
+    <!-- RUT -->
+    <ion-item>
+      <ion-input type="text" required [(ngModel)]="rut" name="rut" #rutModel="ngModel" label="Rut" labelPlacement="floating" helperText="Ingresa tu Rut" errorText="El rut es obligatorio"></ion-input>
+    </ion-item>
+
+
+    <!-- Email -->
+    <ion-item>
+      <ion-input type="email" required [(ngModel)]="email" name="email" #emailModel="ngModel" label="Email" labelPlacement="floating" helperText="Ingresa tu correo" errorText="El correo es obligatorio"></ion-input>
+    </ion-item>
+
+    <!-- Regiones -->
+    <ion-item>
+      <ion-select [(ngModel)]="region" required name="region" #regionModel="ngModel" interface="popover" labelPlacement="floating" label="Elige tu región">
+        <ion-select-option value="I Región">I Región</ion-select-option>
+        <ion-select-option value="II Región">II Región</ion-select-option>
+        <ion-select-option value="III Región">III Región</ion-select-option>
+        <ion-select-option value="IV Región">IV Región</ion-select-option>
+        <ion-select-option value="V Región">V Región</ion-select-option>
+        <ion-select-option value="VI Región">VI Región</ion-select-option>
+        <ion-select-option value="VII Región">VII Región</ion-select-option>
+        <ion-select-option value="VIII Región">VIII Región</ion-select-option>
+        <ion-select-option value="IX Región">IX Región</ion-select-option>
+        <ion-select-option value="X Región">X Región</ion-select-option>
+        <ion-select-option value="XI Región">XI Región</ion-select-option>
+        <ion-select-option value="XII Región">XII Región</ion-select-option>
+        <ion-select-option value="XIII Región">Región Metropolitana de Santiago</ion-select-option>
+        <ion-select-option value="XIV Región">XIV Región</ion-select-option>
+        <ion-select-option value="XV Región">XV Región</ion-select-option>
+        <ion-select-option value="XVI Región">XVI Región</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Comuna -->
+    <ion-item>
+      <ion-input type="text" required [(ngModel)]="comuna" name="comuna" #comunaModel="ngModel" label="Comuna" labelPlacement="floating" helperText="Ingresa tu comuna" errorText="La comuna es obligatoria"></ion-input>
+    </ion-item>
+    
+
+    <!-- Contraseña -->
+    <ion-item>
+      <ion-input type="password" required [(ngModel)]="password" name="password" #passwordModel="ngModel" label="Contraseña" labelPlacement="floating" helperText="Ingresa tu contraseña" errorText="Las contraseña es obligatoria"></ion-input>
+    </ion-item>
+
+    <!-- Confirmar contraseña -->
+    <ion-item>
+      <ion-input type="password" required [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPasswordModel="ngModel" label="Contraseña" labelPlacement="floating" helperText="Ingresa la contraseña nuevamente"></ion-input>
+    </ion-item>
+
+    <!-- Términos y condiciones -->
+    <ion-item>
+      <ion-checkbox required [(ngModel)]="acceptsTerms" name="acceptsTerms" #termsModel="ngModel" labelPlacement="end" justify="start"> Acepto los términos y condiciones </ion-checkbox>
+    </ion-item>
+    
+    <ion-button expand="block" type="submit">Registrarse</ion-button>
+    <p *ngIf="passwordError" class="error" color="danger">{{ passwordError }}</p>
+    <p *ngIf="emailError" class="error" color="danger">{{ emailError }}</p>
+    <p *ngIf="rutError" class="error" color="danger">{{ rutError }}</p>
+
+  </form>
+</ion-content>

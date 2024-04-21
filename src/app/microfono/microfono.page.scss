@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+}
+  
+img {
+    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+    border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+    margin: 0 auto 24px; /* Centra la imagen horizontalmente y ajusta el margen inferior */
+    max-width: none; /*Elimina el tamaño máximo establecido */
+}
+  
+
+.mic {
+    width: 50px; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    margin: 0;
+    display: block;
+}
+
+.back-button{
+    background-color: transparent; /* Establece el fondo del botón como transparente */
+    border: none; /* Elimina el borde del botón */
+    width: 80%;
+    height:100%;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+    text-align: left;
+}
+
+// Para que los botones no se solapen con el footer
+ion-content {
+    --padding-bottom: 5%;
+}
