@@ -1,9 +1,9 @@
 h1 {
     text-align: center;
-}
+  }
   
-img {
-    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+  img {
+    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
     border-radius: 20px; /* Ajusta el radio del borde para la imagen */
@@ -11,24 +11,77 @@ img {
     max-width: none; /*Elimina el tamaño máximo establecido */
 }
   
-
-.mic {
+  p{
+    text-align: center;
+    color: grey;
+  }
+  
+  ion-button {
+    width: 30%;
+    margin: 0 auto;
+  }
+  .imagen-grande {
+    width: 300px; /* Define el ancho deseado */
+    height: auto; /* Mantiene la altura proporcional para mantener la relación de aspecto original */
+  }
+  .container {
+    text-align: center; /* Centra horizontalmente el contenido del contenedor */
+    background: none; /* Elimina cualquier fondo predeterminado del botón */
+    border: none; /* Elimina cualquier borde predeterminado del botón */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+  .microfono-img {
     width: 50px; /* Ajusta el ancho de la imagen según sea necesario */
     height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    margin: 0;
-    display: block;
+  }
+  .left-button {
+    position: absolute;
+    left: 0;
+    width: 30px; /* Establece el ancho del botón */
+    height: 50px; /* Establece la altura del botón */
+    /* Puedes aplicar estilos adicionales al botón si es necesario */
+  }
+  .mi-boton {
+    background-color: transparent; /* Establece el fondo del botón como transparente */
+    border: none; /* Elimina el borde del botón */
+    align-self: flex-start;
+    width: 30%;
+    margin: 0 auto;
+   
+    /* Puedes agregar más estilos según sea necesario */
+  }
+  .botones-centrados {
+    display: flex;
+    justify-content: center;
+    background-color: transparent; /* Establece el fondo del botón como transparente */
+    border: none; /* Elimina cualquier borde del botón */
+  }
+  
+  .icon {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  
+  .imagen {
+    width: 100%; /* Opcional: Ajusta el ancho de la imagen al 100% del contenedor */
+    max-width: 400px; /* Opcional: Establece un ancho máximo para la imagen */
+  }
+  .titulo {
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  .botonAtras{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
-
-.back-button{
+  .back-button{
     background-color: transparent; /* Establece el fondo del botón como transparente */
     border: none; /* Elimina el borde del botón */
     width: 80%;
     height:100%;
     align-self: flex-start; /* Alinea el botón a la izquierda */
     text-align: left;
-}
-
-// Para que los botones no se solapen con el footer
-ion-content {
-    --padding-bottom: 5%;
 }

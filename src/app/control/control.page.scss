@@ -1,3 +1,64 @@
-ion-title{
+
+  h1 {
     text-align: center;
+  }
+  
+  img {
+    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+    border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+    margin: 0 auto 24px; /* Centra la imagen horizontalmente y ajusta el margen inferior */
+    max-width: none; /*Elimina el tamaño máximo establecido */
+}
+
+ion-button {
+  width: 30%;
+  margin: 0 auto;
+}
+  
+.container {
+  text-align: center; /* Centra horizontalmente el contenido del contenedor */
+  background: none; /* Elimina cualquier fondo predeterminado del botón */
+  border: none; /* Elimina cualquier borde predeterminado del botón */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin-bottom: 5%;
+}
+
+.icon {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+
+
+.titulo {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.estiloBotonRobot
+{
+  background-color: transparent;
+  border: none;
+  font-size: 20px; /* Tamaño del icono */
+  color: blue; /* Color del icono */
+}
+
+.dpad 
+{
+  button 
+  {
+    font-size: 60px;
+    margin: 5px;
+  }
+  .horizontal-buttons 
+  {
+    display: flex;
+    button 
+    {
+      margin: 0 5px;
+    }
+  }
 }

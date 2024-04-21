@@ -2,11 +2,12 @@
 
   <div class="container">
     <h1 class="titulo">LiveStream</h1>
-
     <img src="https://t1.ea.ltmcdn.com/es/posts/8/7/8/como_dejar_a_un_perro_solo_en_casa_20878_600.jpg" alt="Mascota en vivo" >
-    
-    <button class="mic" (click)="cambiarImagen">
-      <img src="https://static.vecteezy.com/system/resources/previews/000/422/662/non_2x/microphone-icon-vector-illustration.jpg" alt="Micrófono" class="microfono-img">
+    <button class="center-button botones-centrados" (click)="toggleMicrophone()">
+      <img *ngIf="isMicrophoneOn; else mutedMic" src="https://static.vecteezy.com/system/resources/previews/000/422/662/non_2x/microphone-icon-vector-illustration.jpg" alt="Micrófono" class="microfono-img">
+      <ng-template #mutedMic>
+        <img src="https://cdn.icon-icons.com/icons2/1933/PNG/512/iconfinder-mute-mic-microphone-audio-sound-4593173_122241.png" alt="Micrófono Apagado" class="microfono-img">
+      </ng-template>
     </button>
   </div>
 </ion-content>

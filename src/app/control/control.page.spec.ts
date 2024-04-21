@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ControlPage } from './control.page';
 
-describe('ControlPage', () => {
+describe('ControlRobotPage', () => {
   let component: ControlPage;
   let fixture: ComponentFixture<ControlPage>;
 
