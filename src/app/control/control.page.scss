@@ -1,22 +1,22 @@
 
-  h1 {
-    text-align: center;
-  }
-  
-  img {
-    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
-    border-radius: 20px; /* Ajusta el radio del borde para la imagen */
-    margin: 0 auto 24px; /* Centra la imagen horizontalmente y ajusta el margen inferior */
-    max-width: none; /*Elimina el tamaño máximo establecido */
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+  border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+  margin: 0 auto 24px; /* Centra la imagen horizontalmente y ajusta el margen inferior */
+  max-width: none; /*Elimina el tamaño máximo establecido */
 }
 
 ion-button {
   width: 30%;
   margin: 0 auto;
 }
-  
+
 .container {
   text-align: center; /* Centra horizontalmente el contenido del contenedor */
   background: none; /* Elimina cualquier fondo predeterminado del botón */
@@ -25,7 +25,6 @@ ion-button {
   display: flex;
   flex-direction: column; /* Organiza los elementos verticalmente */
   align-items: center; /* Centra los elementos horizontalmente */
-  margin-bottom: 5%;
 }
 
 .icon {
@@ -38,27 +37,57 @@ ion-button {
   text-align: left; /* Alinea el texto a la izquierda */
 }
 
-.estiloBotonRobot
-{
-  background-color: transparent;
-  border: none;
-  font-size: 20px; /* Tamaño del icono */
-  color: blue; /* Color del icono */
+.back-button{
+  background-color: transparent; /* Establece el fondo del botón como transparente */
+  border: none; /* Elimina el borde del botón */
+  width: 80%;
+  height:100%;
+  align-self: flex-start; /* Alinea el botón a la izquierda */
+  text-align: left;
 }
-
-.dpad 
-{
-  button 
-  {
-    font-size: 60px;
-    margin: 5px;
-  }
-  .horizontal-buttons 
-  {
-    display: flex;
-    button 
-    {
-      margin: 0 5px;
-    }
-  }
+.botonesTop{
+  position: absolute;
+  top: 85%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 0; /* Posición en la parte inferior del contenedor */
+  left: 0; /* Posición a la izquierda del contenedor */
+  margin-bottom: 20px; /* Espacio entre los botones y el borde inferior del contenedor */
+  margin-left: 90px; /* Espacio entre los botones y el borde izquierdo del contenedor */
+    
+}
+.botonesDown{
+  position: absolute;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 0; /* Posición en la parte inferior del contenedor */
+  left: 0; /* Posición a la izquierda del contenedor */
+  margin-bottom: 20px; /* Espacio entre los botones y el borde inferior del contenedor */
+  margin-left: 90px; /* Espacio entre los botones y el borde izquierdo del contenedor */
+    
+}
+.botones {
+  position: absolute;
+  top: 87.5%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 0; /* Posición en la parte inferior del contenedor */
+  left: 0; /* Posición a la izquierda del contenedor */
+  margin-bottom: 20px; /* Espacio entre los botones y el borde inferior del contenedor */
+  margin-left: 90px; /* Espacio entre los botones y el borde izquierdo del contenedor */
+    
+}
+.botones .boton + .boton {
+  margin-left: 15px; /* Ajusta este valor según sea necesario para agregar espacio entre los botones */
+}
+.estiloBotonRobot{
+  background-color: transparent;
+border: none;
+font-size: 24px; /* Tamaño del icono */
+color: blue; /* Color del icono */
+}
+.boton {
+  margin-right: 10px; 
+  font-size: 70px; /* Ajusta el tamaño del botón según sea necesario */
 }

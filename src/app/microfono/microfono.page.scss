@@ -3,7 +3,7 @@ h1 {
   }
   
   img {
-    width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
     border-radius: 20px; /* Ajusta el radio del borde para la imagen */
@@ -32,6 +32,7 @@ h1 {
     display: flex;
     flex-direction: column; /* Organiza los elementos verticalmente */
     align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 5%;
   }
   .microfono-img {
     width: 50px; /* Ajusta el ancho de la imagen según sea necesario */
