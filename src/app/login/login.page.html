@@ -14,6 +14,7 @@
     
     <ion-button expand="block" type="submit">Iniciar sesión</ion-button>
     <p *ngIf="emailError" class="error" color="danger">{{ emailError }}</p>
+    <p *ngIf="passwordError" class="error" color="danger">{{ passwordError }}</p>
 
     <p class="account-prompt">Si no posees cuenta, puedes registrarte</p>
     <ion-button expand="full" routerLink="/register" fill="clear">Crear una nueva cuenta</ion-button>

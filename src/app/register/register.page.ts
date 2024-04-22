@@ -77,6 +77,11 @@ export class RegisterPage
     {
       this.passwordError = 'Las contraseñas no coinciden.';
       isValid = false;
+    }
+    else if (!this.password || this.password.trim() === '')
+    {
+      this.passwordError = 'Las contraseña no puede estar vacia.';
+      isValid = false;
     } 
     else 
     {

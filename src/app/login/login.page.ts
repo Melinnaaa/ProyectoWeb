@@ -11,7 +11,7 @@ export class LoginPage {
   password: string = '';
   formSubmitted = false;
   emailError: string = '';
-
+  passwordError: string = '';
   constructor(private router: Router) {}
 
   onSubmit() {
@@ -44,6 +44,11 @@ export class LoginPage {
     {
       this.emailError = '';
     }
+    if (!this.password || this.password.trim() === '')
+    {
+      this.passwordError = 'Las contraseña no puede estar vacia.';
+      isValid = false;
+    } 
     return isValid;
   }
 
