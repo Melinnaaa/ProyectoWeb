@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DatosService } from '../services/datos.service';  // Ajusta la ruta según sea necesario
+
+interface Commune {
+  name: string;
+  identifier: string;
+}
+
+interface Region {
+  name: string;
+  romanNumber: string;
+  number: string;
+  abbreviation: string;
+  communes: Commune[];
+}
 
 @Component({
   selector: 'app-register',
   templateUrl: 'register.page.html',
   styleUrls: ['register.page.scss'],
 })
-export class RegisterPage 
+
+export class RegisterPage implements OnInit
 {
   
   email: string = '';
@@ -23,10 +38,35 @@ export class RegisterPage
   rutError: string = '';
   passwordError: string = '';
 
-  constructor(private router: Router)
-  {
+  regions: Region[] = [];
+  communes: Commune[] = [];
+  selectedRegion: string = '';
+  selectedCommune: string = '';
 
+  constructor(private router: Router, private datosService: DatosService){}
+
+  ngOnInit() {
+    this.loadRegions();
   }
+
+  loadRegions() {
+    this.datosService.getRegions().subscribe(data => {
+      this.regions = data;  // Asumiendo que data es un arreglo de regiones
+    });
+  }
+  
+  loadCommunes() {
+    const region = this.regions.find(r => r.name === this.selectedRegion);
+    this.communes = region ? region.communes : [];
+    console.log('Selected Region:', region);  // Esto te mostrará qué región se ha seleccionado
+    console.log('Communes:', this.communes);  // Esto verificará que las comunas están siendo cargadas correctamente
+  }  
+  
+  onRegionChange(event: any) {
+    this.selectedRegion = event.detail.value;
+    this.loadCommunes();
+  }
+  
 
   onSubmit() 
   {
