@@ -1,0 +1,143 @@
+
+h1 {
+  text-align: center;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  align-items: center; /* Alinea verticalmente el contenido en el centro */
+  justify-content: flex-start; /* Alinea horizontalmente el contenido a la izquierda */
+  width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
+}
+
+.content img {
+  width: auto; /* Asegura que la imagen mantenga su tamaño natural */
+  height: auto; /* Mantiene la relación de aspecto original */
+  max-width: 80%; /* Limita el tamaño máximo de la imagen para dejar espacio al D-pad */
+  flex-grow: 1; /* Permite que la imagen tome el espacio restante */
+}
+
+.directional-buttons {
+  position: relative; /* Posiciona el D-pad dentro del flujo normal, a la izquierda */
+  width: 20vw; /* Tamaño del D-pad */
+  height: 20vw;
+  margin-right: 2vw; /* Espacio entre el D-pad y la imagen */
+  opacity: 0.7; /* Transparencia del D-pad */
+  display: grid;
+  grid-gap: 1vw;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: 1fr 1.5fr 1fr;
+  grid-template-areas: 
+      ".... up ...."
+      "left .... right"
+      ".... down ....";
+}
+
+
+/* hides the button text */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* base button */
+.direction-button {
+  color: rgb(55, 50, 50);
+  background: currentcolor;
+  border: none;
+  position: relative;
+}
+
+/* the overlapping outside triangle */
+.direction-button:before {
+  width: 15vw;
+  height: 15vw;
+  transform: rotate(45deg);
+  background: currentcolor;
+  position: absolute;
+}
+
+/* the inner direction triangle */
+.direction-button:after {
+  border: 5vw solid transparent;
+  position: absolute;
+}
+
+.direction-button:hover {
+  color: rgb(85,55,55);
+}
+
+.direction-button:active:after {
+  color: rgb(255, 152, 152);
+}
+
+/* individual button styles */
+.up {
+  grid-area: up;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.up:before, .down:before {
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.up:after, .down:after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left {
+  grid-area: left;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.left:before, .right:before {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.left:after, .right:after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  grid-area: right;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.down {
+  grid-area: down;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Media Queries for different devices */
+@media (max-width: 600px) {
+  .directional-buttons {
+    width: 50vw;
+    height: 50vw;
+    grid-gap: 2vw;
+  }
+
+  .direction-button:before {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .direction-button:after {
+    border-width: 10vw;
+  }
+}
+
+/* other styles */
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Mantiene el centrado vertical */
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  background: darkgrey;
+}

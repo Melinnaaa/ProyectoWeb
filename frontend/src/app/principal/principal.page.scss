@@ -1,0 +1,27 @@
+img {
+    width: 80%; /* Establece el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+    border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+    margin: 0 auto 24px; /* Centra la imagen horizontalmente y ajusta el margen inferior */
+    max-width: none; /* Elimina el tamaño máximo establecido */
+}
+
+ion-button{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+ion-title{
+    text-align: center;
+}
+
+// Para que los botones no se solapen con el footer
+ion-content {
+    --padding-bottom: 5%;
+}
+
+ion-header{
+    position: relative;
+}
