@@ -9,14 +9,22 @@
 
   <ion-router-outlet></ion-router-outlet>
 
-  <!-- El footer se mostrará en todas las paginas menos en las de registro, inicio y bienvenida -->
-  <ion-footer *ngIf="mostrarFooter">
+ <!-- El footer se mostrará en todas las páginas menos en las de registro, inicio y bienvenida -->
+ <ion-footer *ngIf="mostrarFooter">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-button routerLink="/principal" >
-          <ion-icon name="home-outline" ></ion-icon>
+        <ion-button routerLink="/principal">
+          <ion-icon name="home-outline"></ion-icon>
           Inicio
         </ion-button>
+      </ion-buttons>
+      <ion-buttons > 
+        <div style="flex: 1; text-align: center;">
+          <ion-button class="admin" *akoShowForRoles="[1]" routerLink="/admin">
+            <ion-icon name="person-outline"></ion-icon>
+            Administrador
+          </ion-button>
+        </div>
       </ion-buttons>
       <ion-buttons slot="end">
         <ion-button>

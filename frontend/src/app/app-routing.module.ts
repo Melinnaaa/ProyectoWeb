@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { isLoggedInGuard } from './guards/is-logged-in.guard';
+import { hasRoleGuard } from './guards/has-role.guard';
+import { authRoleGuardGuard } from './guards/auth-role-guard.guard';
 
 const routes: Routes = [
   {
@@ -37,7 +39,11 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    canMatch: [isLoggedInGuard],
+    canMatch: [hasRoleGuard],
+    canActivate: [authRoleGuardGuard],
+    data:{
+      allowedRoles: [1]
+    },
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
 ];
