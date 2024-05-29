@@ -1,31 +1,35 @@
 import session from 'express-session';
 import { Request, Response, NextFunction } from 'express';
-
 import dotenv from 'dotenv';
 
 // Cargar las variables de entorno desde el archivo .env
 dotenv.config();
 
-const secretKey = process.env.SESSION_SECRET_KEY;
+const sessionSecret = process.env.SESSION_SECRET_KEY;
+const MemoryStore = session.MemoryStore;
 
-if (!secretKey) {
-  throw new Error('No existe secret key');
+if (!sessionSecret) {
+  throw new Error('Session secret key is missing');
 }
 
 const sessionMiddleware = session({
-  secret: secretKey, 
+  secret: sessionSecret,
+  resave: false,
+  cookie: {maxAge: 1000*60*60*24, 
+          sameSite: 'lax',
+          secure: false,
+          httpOnly: true}, 
   saveUninitialized: true,
-  cookie: { secure: true } 
+  store: new MemoryStore()
 });
 
 export const verifySession = (req: Request, res: Response, next: NextFunction) => {
-    if (req.session && req.session.user) {
-      next();
-    } else {
-      res.status(401).json({ message: 'No autorizado' });
-    }
-  };
-
-export default (req: Request, res: Response, next: NextFunction) => {
-  sessionMiddleware(req, res, next);
+  console.log('Session:', req.session);
+  if (req.session.authenticated) {
+    return next();
+  } else {
+    res.status(401).send('No autorizado');
+  }
 };
+
+export default sessionMiddleware;

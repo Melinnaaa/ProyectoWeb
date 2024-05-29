@@ -1,5 +1,5 @@
 import express, { Application } from 'express';
-import corsMiddleware from '../middlewares/cors.middleware';
+import {setupCors} from '../middlewares/cors.middleware';
 import rootRoutes from '../routes/root.routes';
 import userRoutes from '../routes/users.routes';
 import registerRoutes from '../routes/register.routes'
@@ -36,14 +36,14 @@ class Server {
   }
 
   private middlewares() {
-    // Parseamos el body
-    this.app.use(express.json());
-
     // CORS
-    this.app.use(corsMiddleware);
+    this.app.use(setupCors);
 
     // Configuración de express-session
     this.app.use(sessionMiddleware);
+
+     // Parseamos el body
+     this.app.use(express.json());
   }
 
   private async dbConnection() {

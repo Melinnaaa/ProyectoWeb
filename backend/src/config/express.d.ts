@@ -9,6 +9,11 @@ declare module 'express-serve-static-core' {
 
 declare module 'express-session' {
     interface SessionData {
-      user?: { [key: string]: any };
+      user: {
+        id: string;
+        username: string;
+        role: string;
+      };
+      authenticated: boolean;
     }
 }

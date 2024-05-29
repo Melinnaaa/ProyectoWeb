@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import userService from '../services/user.service';
 import dotenv from 'dotenv';
+const session = require('express-session');
 
 // Cargar las variables de entorno desde el archivo .env
 dotenv.config();
@@ -31,10 +32,13 @@ export const login = async (req: Request, res: Response) => {
     const user = await userService.login(email, password);
     if (user) {
       // Guardamos la información del usuario en la sesión
-      req.session.user = user;
+      req.session.user = { id: user.user.Rut, username: user.user.Correo_electronico, role: user.user.role };
+      req.session.authenticated = true;
+      const session = req.session;
       // Si el login es exitoso, generar un token
       const token = createToken(user);
-      res.json({ user , token });
+      console.log(req.session.user)
+      res.json({ user , token, session});
     } else {
       // Si las credenciales son incorrectas
       res.status(400).json({ message: 'Credenciales incorrectas' });
@@ -47,3 +51,4 @@ export const login = async (req: Request, res: Response) => {
     }
   }
 };
+
