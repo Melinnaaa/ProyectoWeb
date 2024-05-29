@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ userName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Correo electrónico:</strong> {{ email }}</p>
+      <p><strong>Region:</strong> {{ region }}</p>
+      <p><strong>Comuna:</strong> {{ comuna }}</p>
+      <p><strong>Rol:</strong> {{ userRole }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="primary" (click)="logout()">Logout</ion-button>
+</ion-content>

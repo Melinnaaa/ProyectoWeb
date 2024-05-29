@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared.module';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { AuthService } from './services/auth.service';
     HttpClientModule,  
     RecaptchaV3Module, SharedModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfcCOopAAAAAEkO-0c6zb8fRhVy-4vtsQrtfPZy'}, UserService, AuthService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfcCOopAAAAAEkO-0c6zb8fRhVy-4vtsQrtfPZy'}, UserService, AuthService, provideAnimationsAsync()],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

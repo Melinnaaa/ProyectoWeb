@@ -75,7 +75,17 @@ const routes: Routes = [
   },
   {
     path: 'update-user',
+    canMatch: [hasRoleGuard],
+    canActivate: [authRoleGuardGuard],
+    data:{
+      allowedRoles: [1]
+    },
     loadChildren: () => import('./update-user/update-user.module').then( m => m.UpdateUserPageModule)
+  },
+  {
+    path: 'account',
+    canMatch: [isLoggedInGuard],
+    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
 ];
 

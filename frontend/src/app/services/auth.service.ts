@@ -25,7 +25,13 @@ export class AuthService {
           }
           const role = response.user.user.role;
           const userName = response.user.user.Nombre;
+          const email = response.user.user.Correo_electronico;
+          const comuna = response.user.user.Comuna;
+          const region = response.user.user.Region;
           localStorage.setItem('role', role.toString());
+          localStorage.setItem('email', email.toString());
+          localStorage.setItem('comuna', comuna.toString());
+          localStorage.setItem('region', region.toString());
           localStorage.setItem('userName', userName.toString());
           this.roleSubject.next(role);
           localStorage.setItem('user', JSON.stringify(response.user));
