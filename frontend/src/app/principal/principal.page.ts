@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.page.scss'],
 })
 export class PrincipalPage implements OnInit {
-
+  userName: string = '';
   constructor() { }
 
   ngOnInit() {
+    const fullName = localStorage.getItem('userName') || 'Usuario';
+    this.userName = fullName.split(' ')[0];
   }
 
 }

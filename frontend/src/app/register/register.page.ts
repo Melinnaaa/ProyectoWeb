@@ -99,6 +99,7 @@ export class RegisterPage implements OnInit {
       Rut: this.rut,
       Region: this.selectedRegion,
       Comuna: this.selectedCommune,
+      role: 0
     };
 
     this.userService.saveUser(user, this.captchaToken).subscribe(() => {

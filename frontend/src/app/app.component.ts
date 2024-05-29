@@ -19,7 +19,7 @@ export class AppComponent {
         this.mostrarFooter = !['/login', '/register', '/home'].includes(event.url); // Esconde el footer en 'login' y 'registro'
       }
       if (event instanceof NavigationEnd) {
-        this.mostrarBoton = !['/principal', '/home'].includes(event.url); // Esconde el boton
+        this.mostrarBoton = ![ '/principal', '/home'].includes(event.url); // Esconde el boton
       }
     });
   }

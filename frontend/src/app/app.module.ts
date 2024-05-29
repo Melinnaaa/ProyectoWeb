@@ -9,6 +9,9 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared.module';
+import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +22,7 @@ import { SharedModule } from './shared.module';
     HttpClientModule,  
     RecaptchaV3Module, SharedModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfcCOopAAAAAEkO-0c6zb8fRhVy-4vtsQrtfPZy'}],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, {provide: RECAPTCHA_V3_SITE_KEY, useValue: '6LfcCOopAAAAAEkO-0c6zb8fRhVy-4vtsQrtfPZy'}, UserService, AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

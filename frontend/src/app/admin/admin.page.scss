@@ -1,0 +1,31 @@
+ion-header{
+    text-align: center;
+}
+
+ion-content {
+    ion-grid {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      ion-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+  
+      ion-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+  
+      ion-button {
+        font-size: 1.2em;
+        height: 60px;
+      }
+    }
+  }
+  

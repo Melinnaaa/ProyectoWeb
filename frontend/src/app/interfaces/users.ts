@@ -5,4 +5,5 @@ export interface User {
     Contrasena: string;
     Region: string;
     Comuna: string;
+    role: number;
 }

@@ -46,6 +46,37 @@ const routes: Routes = [
     },
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
+  {
+    path: 'search',
+    canMatch: [hasRoleGuard],
+    canActivate: [authRoleGuardGuard],
+    data:{
+      allowedRoles: [1]
+    },
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'see-users',
+    canMatch: [hasRoleGuard],
+    canActivate: [authRoleGuardGuard],
+    data:{
+      allowedRoles: [1]
+    },
+    loadChildren: () => import('./see-users/see-users.module').then( m => m.SeeUsersPageModule)
+  },
+  {
+    path: 'delete-user',
+    canMatch: [hasRoleGuard],
+    canActivate: [authRoleGuardGuard],
+    data:{
+      allowedRoles: [1]
+    },
+    loadChildren: () => import('./delete-user/delete-user.module').then( m => m.DeleteUserPageModule)
+  },
+  {
+    path: 'update-user',
+    loadChildren: () => import('./update-user/update-user.module').then( m => m.UpdateUserPageModule)
+  },
 ];
 
 @NgModule({

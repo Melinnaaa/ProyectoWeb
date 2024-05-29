@@ -17,15 +17,18 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(this.loginUrl, { email, password })
+    return this.http.post<any>(this.loginUrl, { email, password }, { withCredentials: true })
       .pipe(
         map(response => {
           if (response.token) {
             localStorage.setItem('token', response.token);
           }
           const role = response.user.user.role;
+          const userName = response.user.user.Nombre;
           localStorage.setItem('role', role.toString());
+          localStorage.setItem('userName', userName.toString());
           this.roleSubject.next(role);
+          localStorage.setItem('user', JSON.stringify(response.user));
           return response;
         }),
         catchError(this.handleError)
@@ -35,6 +38,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
+    localStorage.removeItem('user');
     this.roleSubject.next(0);
   }
 
