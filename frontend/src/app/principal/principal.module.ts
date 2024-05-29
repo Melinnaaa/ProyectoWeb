@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { PrincipalPageRoutingModule } from './principal-routing.module';
 
 import { PrincipalPage } from './principal.page';
+import { SharedModule } from '../shared.module';
+
 
 @NgModule({
   imports: [
@@ -14,6 +16,7 @@ import { PrincipalPage } from './principal.page';
     FormsModule,
     IonicModule,
     PrincipalPageRoutingModule,
+    SharedModule
   ],
   declarations: [PrincipalPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
