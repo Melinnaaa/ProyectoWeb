@@ -44,6 +44,9 @@ Antes de comenzar, necesitarás tener instalado Node.js en tu máquina. Puedes d
 #### Frontend
    * cd ../frontend
    * npm install
+### 2. Configurar la base de datos
+- Abre XAMPP y asegúrate de que apache y MySQL esten en funcionamiento.
+- Abre phpMyAdmin, accede a la pestaña sql en la parte superior y copia el contenido de mascotapp.sql.
 
 ## Ejecución del Proyecto
 
