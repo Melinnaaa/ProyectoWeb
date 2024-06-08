@@ -38,15 +38,15 @@ Antes de comenzar, necesitarás tener instalado Node.js en tu máquina. Puedes d
 3. **Integración de los archivos del proyecto**:
    - Una vez finalizada la instalación, copia los archivos de este repositorio en la carpeta raíz del nuevo proyecto creado.
 4. **Instalación de dependencias**
-#### Backend
-   * cd backend
-   * npm install
-#### Frontend
-   * cd ../frontend
-   * npm install
-### 2. Configurar la base de datos
-- Abre XAMPP y asegúrate de que apache y MySQL esten en funcionamiento.
-- Abre phpMyAdmin, accede a la pestaña sql en la parte superior y copia el contenido de mascotapp.sql.
+   - Backend
+      * cd backend
+      * npm install
+   - Frontend
+      * cd ../frontend
+      * npm install
+5. **Configurar la base de datos** 
+   - Abre XAMPP y asegúrate de que apache y MySQL esten en funcionamiento.
+   - Abre phpMyAdmin, accede a la pestaña sql en la parte superior y copia el contenido de mascotapp.sql.
 
 ## Ejecución del Proyecto
 
