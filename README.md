@@ -16,6 +16,8 @@ Antes de comenzar, necesitarás tener instalado Node.js en tu máquina. Puedes d
      ```
      npm i -g @ionic/cli
      ```
+3. **Intalación de Xampp**
+   - - XAMPP (para gestionar MySQL y Apache en Windows), puedes instalarlo desde acá [xampp](https://www.apachefriends.org/es/download.html)
 
 ## Creación del Proyecto
 
@@ -35,16 +37,22 @@ Antes de comenzar, necesitarás tener instalado Node.js en tu máquina. Puedes d
 
 3. **Integración de los archivos del proyecto**:
    - Una vez finalizada la instalación, copia los archivos de este repositorio en la carpeta raíz del nuevo proyecto creado.
+4. **Instalación de dependencias**
+#### Backend
+   * cd backend
+   * npm install
+#### Frontend
+   * cd ../frontend
+   * npm install
 
 ## Ejecución del Proyecto
 
-Para ejecutar el proyecto y visualizarlo en un navegador web, sigue estos pasos:
+### 1. Iniciar el backend
+* cd backend
+* npm install -g nodemon
+* nodemon dist/index.js
+El backend se ejecutará en el puerto 3000.
 
-- Abre una terminal en la carpeta raíz del proyecto.
-- Ejecuta el comando:
-   ```
-     ionic serve
-     ```
- - Ionic compilará el proyecto y lo servirá en `http://localhost:8100`.
-
-¡Ya está listo! Ahora puedes ver y interactuar con tu proyecto en la página web indicada.
+### 2. Iniciar el frontend
+* cd ../frontend
+* ionic serve
