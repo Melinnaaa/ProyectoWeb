@@ -1,143 +1,212 @@
+$dpad-fg: #ddd;
+$dpad-fg-hover: #eee;
+$dpad-bg: transparent;
+$arrowcolor: #aaa;
+$tri-sml-a: 13px;
+$tri-sml-b: 19px;
+$dpad-arrow-shift: 5px;
+$dpad-arrow-move: 35%;
 
-h1 {
+body {
+  background: #333; // Fondo oscuro para contrastar
+}
+
+.set {
+  overflow: hidden;
+  padding: 30px;
   text-align: center;
 }
 
-.content {
+.d-pad {
   position: relative;
-  display: flex;
-  align-items: center; /* Alinea verticalmente el contenido en el centro */
-  justify-content: flex-start; /* Alinea horizontalmente el contenido a la izquierda */
-  width: 100%; /* Asegura que el contenedor use todo el ancho disponible */
-}
-
-.content img {
-  width: auto; /* Asegura que la imagen mantenga su tamaño natural */
-  height: auto; /* Mantiene la relación de aspecto original */
-  max-width: 80%; /* Limita el tamaño máximo de la imagen para dejar espacio al D-pad */
-  flex-grow: 1; /* Permite que la imagen tome el espacio restante */
-}
-
-.directional-buttons {
-  position: relative; /* Posiciona el D-pad dentro del flujo normal, a la izquierda */
-  width: 20vw; /* Tamaño del D-pad */
-  height: 20vw;
-  margin-right: 2vw; /* Espacio entre el D-pad y la imagen */
-  opacity: 0.7; /* Transparencia del D-pad */
-  display: grid;
-  grid-gap: 1vw;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  grid-template-rows: 1fr 1.5fr 1fr;
-  grid-template-areas: 
-      ".... up ...."
-      "left .... right"
-      ".... down ....";
-}
-
-
-/* hides the button text */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; 
-  width: 1px;
+  width: 200px;
+  height: 200px;
+  border-radius: 0%; // Sin borde redondeado
   overflow: hidden;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
-/* base button */
-.direction-button {
-  color: rgb(55, 50, 50);
-  background: currentcolor;
-  border: none;
-  position: relative;
-}
-
-/* the overlapping outside triangle */
-.direction-button:before {
-  width: 15vw;
-  height: 15vw;
-  transform: rotate(45deg);
-  background: currentcolor;
-  position: absolute;
-}
-
-/* the inner direction triangle */
-.direction-button:after {
-  border: 5vw solid transparent;
-  position: absolute;
-}
-
-.direction-button:hover {
-  color: rgb(85,55,55);
-}
-
-.direction-button:active:after {
-  color: rgb(255, 152, 152);
-}
-
-/* individual button styles */
-.up {
-  grid-area: up;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-.up:before, .down:before {
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-}
-.up:after, .down:after {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.left {
-  grid-area: left;
-  border-radius: 0.5rem 0 0 0.5rem;
-}
-.left:before, .right:before {
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-}
-.left:after, .right:after {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.right {
-  grid-area: right;
-  border-radius: 0 0.5rem 0.5rem 0;
-}
-
-.down {
-  grid-area: down;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-/* Media Queries for different devices */
-@media (max-width: 600px) {
-  .directional-buttons {
-    width: 50vw;
-    height: 50vw;
-    grid-gap: 2vw;
+  background: transparent; // Fondo transparente
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 0%; // Sin borde redondeado
+    transform: translate(-50%, -50%);
+    width: 66.6%;
+    height: 66.6%;
+    background: transparent; // Fondo transparente
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+    z-index: 2;
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    background: transparent; // Fondo transparente
+    border-radius: 0%; // Sin borde redondeado
+    transform: translate(-50%, -50%);
+    transition: all .25s;
+    cursor: pointer;
+  }
+  &:hover:after {
+    width: 30%;
+    height: 30%;
+  }  
+  a {
+    display: block;
+    position: absolute;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    width: 33.3%;
+    height: 43%;
+    line-height: 40%;
+    color: #fff;
+    background: $dpad-fg;
+    text-align: center;  
+    &:hover {
+      background: $dpad-fg-hover;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-radius: 5px;
+      border-style: solid;     
+      transition: all .25s;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 102%;
+      height: 78%;
+      background: $dpad-bg;
+      border-radius: 5px;
+    }    
+  }
+  a.left, a.right {
+    width: 43%;
+    height: 33%;
+    &:after {
+      width: 78%;
+      height: 102%;
+    }    
   }
 
-  .direction-button:before {
-    width: 25vw;
-    height: 25vw;
+  a.up {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 5px 5px 50% 50%;
+    &:hover {
+      background: linear-gradient(0deg, $dpad-fg 0%, $dpad-fg-hover 50%);
+    }
+    &:after {
+      left: 0;
+      top: 0;
+      transform: translate(-100%, 0);
+      border-top-left-radius: 50%;
+      pointer-events: none;
+    }
+    &:before {
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-width: 0 $tri-sml-a $tri-sml-b $tri-sml-a;
+      border-color: transparent transparent $arrowcolor transparent;
+    }
+    &:active:before {
+      border-bottom-color: #333;
+    }
   }
+  a.up:hover:before { top: $dpad-arrow-move; }
 
-  .direction-button:after {
-    border-width: 10vw;
+  a.down {
+    bottom: 0;
+    left: 50%;    
+    transform: translate(-50%, 0);
+    border-radius: 50% 50% 5px 5px; 
+    &:hover {
+      background: linear-gradient(180deg, $dpad-fg 0%, $dpad-fg-hover 50%);
+    }
+    &:after {
+      right: 0;
+      bottom: 0;
+      transform: translate(100%, 0);
+      border-bottom-right-radius: 50%;
+      pointer-events: none;
+    }
+    &:before {
+      bottom: 40%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      border-width: $tri-sml-b $tri-sml-a 0px $tri-sml-a;
+      border-color: $arrowcolor transparent transparent transparent;
+    }
+    &:active:before {
+      border-top-color: #333;
+    }
   }
-}
+  a.down:hover:before { bottom: $dpad-arrow-move; }
 
-/* other styles */
-html, body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center; /* Mantiene el centrado vertical */
-  justify-content: flex-start; /* Alinea el contenido a la izquierda */
-  background: darkgrey;
+  a.left {
+    top: 50%;
+    left: 0;    
+    transform: translate(0, -50%);
+    border-radius: 5px 50% 50% 5px;
+    &:hover {
+      background: linear-gradient(-90deg, $dpad-fg 0%, $dpad-fg-hover 50%);
+    }
+    &:after {
+      left: 0;
+      bottom: 0;
+      transform: translate(0, 100%);
+      border-bottom-left-radius: 50%;
+      pointer-events: none;
+    }
+    &:before {
+      left: 40%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-width: $tri-sml-a $tri-sml-b $tri-sml-a 0;
+      border-color: transparent $arrowcolor transparent transparent;
+    }
+    &:active:before {
+      border-right-color: #333;
+    }
+  }
+  a.left:hover:before { left: $dpad-arrow-move; }
+
+  a.right {
+    top: 50%;
+    right: 0;    
+    transform: translate(0, -50%);  
+    border-radius: 50% 5px 5px 50%;
+    &:hover {
+      background: linear-gradient(90deg, $dpad-fg 0%, $dpad-fg-hover 50%);
+    }
+    &:after {
+      right: 0;
+      top: 0;
+      transform: translate(0, -100%);
+      border-top-right-radius: 50%;      
+      pointer-events: none;
+    }
+    &:before {
+      right: 40%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      border-width: $tri-sml-a 0 $tri-sml-a $tri-sml-b;
+      border-color: transparent transparent transparent $arrowcolor;
+    }
+    &:active:before {
+      border-left-color: #333;
+    }
+  }
+  a.right:hover:before { right: $dpad-arrow-move; }  
 }
+.d-pad.up a.up:before { border-bottom-color: #333; }
+.d-pad.down a.down:before { border-top-color: #333; }
+.d-pad.left a.left:before { border-right-color: #333; }
+.d-pad.right a.right:before { border-left-color: #333; }

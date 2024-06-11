@@ -12,13 +12,16 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let user of users">
-      <ion-label>
-        <h2>{{ user.Nombre }}</h2>
-        <p>{{ user.Rut }}</p>
-        <p>{{ user.Correo_electronico }}</p>
-        <p>{{ user.Comuna }}</p>
-      </ion-label>
-    </ion-item>
+    <ion-card *ngFor="let user of users">
+      <ion-card-header>
+        <ion-card-title>{{ user.Nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Rut:</strong> {{ user.Rut }}</p>
+        <p><strong>Email:</strong> {{ user.Correo_electronico }}</p>
+        <p><strong>Comuna:</strong> {{ user.Comuna }}</p>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>
+

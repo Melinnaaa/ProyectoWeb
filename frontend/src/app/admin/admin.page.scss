@@ -2,30 +2,17 @@ ion-header{
     text-align: center;
 }
 
+ion-button{
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+// Para que los botones no se solapen con el footer
 ion-content {
-    ion-grid {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      ion-row {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-  
-      ion-col {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-  
-      ion-button {
-        font-size: 1.2em;
-        height: 60px;
-      }
-    }
-  }
-  
+  --padding-bottom: 5%;
+}
+
+ion-content {
+  --padding-top: 10%;
+}  

@@ -35,12 +35,3 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
-
-ion-header::after {
-    background: transparent !important; /* Hace el fondo transparente */
-  }
-  
-  ion-toolbar {
-    --background: transparent; /* Hace el fondo de la barra de herramientas transparente */
-    --ion-background-color: transparent !important; /* Hace el fondo transparente para todas las barras de herramientas */
-  }

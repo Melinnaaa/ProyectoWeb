@@ -6,37 +6,37 @@
 
 <ion-content class="ion-padding">
   <ion-card>
-    <ion-card-header>
-      <ion-card-title>Buscar Usuario</ion-card-title>
-    </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating">Ingrese ID del usuario</ion-label>
+        <ion-label position="floating">Ingrese Rut del usuario</ion-label>
         <ion-input [(ngModel)]="userId"></ion-input>
       </ion-item>
       <ion-button expand="full" (click)="searchUser()">Buscar</ion-button>
     </ion-card-content>
   </ion-card>
 
-  <div *ngIf="user">
+  <div *ngIf="user.Rut">
     <ion-card>
       <ion-card-header>
         <ion-card-title>Detalles del Usuario</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-item>
-          <ion-label>ID:</ion-label>
-          <ion-text>{{ user.Rut }}</ion-text>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="user.Nombre"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Nombre:</ion-label>
-          <ion-text>{{ user.Nombre }}</ion-text>
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input [(ngModel)]="user.Rut"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Email:</ion-label>
-          <ion-text>{{ user.Correo_electronico }}</ion-text>
+          <ion-label position="floating">Correo Electrónico</ion-label>
+          <ion-input [(ngModel)]="user.Correo_electronico"></ion-input>
         </ion-item>
-        <!-- Agrega más campos según sea necesario -->
+        <ion-item>
+          <ion-label position="floating">Comuna</ion-label>
+          <ion-input [(ngModel)]="user.Comuna"></ion-input>
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </div>

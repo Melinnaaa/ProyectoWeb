@@ -10,24 +10,11 @@
       <ion-title size="large">Admin Panel</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button expand="block" routerLink="/see-users">Ver usuarios</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button expand="block" routerLink="/search">Buscar usuario</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button expand="block" routerLink="/delete-user">Eliminar usuario</ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button expand="block" routerLink="/update-user">Actualizar usuario</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
+  <ion-button expand="full" [routerLink]="['/see-users']">Ver usuarios</ion-button>
+  <ion-button expand="full" [routerLink]="['/search']">Buscar usuario</ion-button>
+  <ion-button expand="full" [routerLink]="['/delete-user']">Eliminar usuario</ion-button> 
+  <ion-button expand="full" [routerLink]="['/update-user']">Actualizar usuario</ion-button>
+  
 </ion-content>
 

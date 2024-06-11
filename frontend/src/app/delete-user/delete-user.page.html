@@ -5,21 +5,33 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Ingrese ID del usuario</ion-label>
-    <ion-input [(ngModel)]="userId"></ion-input>
-  </ion-item>
-  <ion-button expand="full" (click)="deleteUser()">Eliminar</ion-button>
-  <ion-text color="primary">{{ message }}</ion-text>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Ingrese Rut del usuario</ion-label>
+        <ion-input [(ngModel)]="userId"></ion-input>
+      </ion-item>
+      <ion-button expand="full" (click)="deleteUser()">Eliminar</ion-button>
+      <ion-text color="primary">{{ message }}</ion-text>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-label>Lista de Usuarios</ion-label>
-    </ion-list-header>
-    <ion-item *ngFor="let user of users">
-      <ion-label>
-        ID: {{ user.Rut }}, Nombre: {{ user.Nombre }}, Email: {{ user.Correo_electronico }}
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lista de Usuarios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <div *ngFor="let user of users">
+          <ion-item lines="none">
+            <ion-label>
+              <h3>Nombre: {{ user.Nombre }}</h3>
+              <p>Rut: {{ user.Rut }}</p>
+              <p>Email: {{ user.Correo_electronico }}</p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

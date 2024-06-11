@@ -8,42 +8,23 @@ import { Location } from '@angular/common';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  mostrarFooter: boolean;
-  mostrarBoton: boolean;
+  mostrarFooter = true;
+  mostrarBoton = true;
 
   constructor(private router: Router, private location: Location) {
-    this.mostrarFooter = this.getCookie('mostrarFooter') !== 'false';
-    this.mostrarBoton = this.getCookie('mostrarBoton') !== 'false';
-
-    this.router.events.subscribe((event) => {
+    this.router.events.subscribe((event) => 
+    {
+      // Se muestra la tolbar en pags especificas
       if (event instanceof NavigationEnd) {
-        const currentUrl = event.urlAfterRedirects || event.url;
-        console.log('Navigated to:', currentUrl);
-
-        this.mostrarFooter = !['/login', '/register', '/home'].includes(currentUrl);
-        this.mostrarBoton = !['/principal', '/home'].includes(currentUrl);
-
-        document.cookie = `mostrarFooter=${this.mostrarFooter}; path=/`;
-        document.cookie = `mostrarBoton=${this.mostrarBoton}; path=/`;
-
-        console.log('Updated mostrarFooter:', this.mostrarFooter);
-        console.log('Updated mostrarBoton:', this.mostrarBoton);
+        this.mostrarFooter = !['/login', '/register', '/home'].includes(event.url); // Esconde el footer en 'login' y 'registro'
+      }
+      if (event instanceof NavigationEnd) {
+        this.mostrarBoton = ![ '/principal', '/home'].includes(event.url); // Esconde el boton
       }
     });
   }
 
   goBack() {
-    this.location.back();
-  }
-
-  private getCookie(name: string): string {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return '';
+    this.location.back(); // Esto llevará al usuario a la página anterior
   }
 }

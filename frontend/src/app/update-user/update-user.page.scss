@@ -1,0 +1,31 @@
+ion-header{
+    text-align: center;
+}
+
+ion-button{
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+ion-text {
+    font-size: 16px; 
+    display: block; 
+    margin-top: 10px; 
+    padding-left: 0; 
+}
+
+ion-label {
+    font-size: 16px; 
+}
+
+ion-item {
+    --inner-padding-bottom: 6px; 
+    --inner-padding-top: 6px; 
+}
+
+ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+}
+
