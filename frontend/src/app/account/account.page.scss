@@ -1,17 +1,36 @@
-ion-header, ion-toolbar, ion-title {
-    --color: #fff; /* Cambia el color del texto del encabezado */
-    text-align: center;
-  }
-  
-  ion-card {
-    margin: 16px;
-  }
-  
-  ion-card-header, ion-card-content {
-    text-align: center;
-  }
-  
-  ion-button {
-    margin: 16px;
-  }
-  
+ion-header, ion-title {
+  --background: var(--ion-color-primary);
+  --color: #ECEEEB; /* Cambia el color del texto del encabezado */
+  text-align: center;
+}
+
+ion-card {
+  margin: 16px;
+}
+
+ion-card-header, ion-card-content {
+  text-align: center;
+}
+
+ion-button {
+  width: 30%;
+  margin: 0 auto;
+  --background: #658B6F; /* Cambia el color de fondo del botón */
+}
+
+body {
+  background-color: #DCD7C9;
+}
+
+ion-content {
+  --background: #C4CDC1; 
+}
+
+.custom-card {
+  --background: #28363D; 
+}
+
+ion-toolbar {
+  --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+  --color: #ECEEEB;
+}

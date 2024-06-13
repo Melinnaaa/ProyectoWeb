@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Account Information</ion-title>
+    <ion-title>Información de la cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="custom-card">
     <ion-card-header>
       <ion-card-title>{{ userName }}</ion-card-title>
     </ion-card-header>
@@ -17,5 +17,5 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button expand="full" color="primary" (click)="logout()">Logout</ion-button>
+  <ion-button expand="full" (click)="logout()">Logout</ion-button>
 </ion-content>

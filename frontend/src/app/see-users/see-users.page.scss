@@ -1,5 +1,18 @@
 ion-header{
+    --background: var(--ion-color-primary); // Ajusta el color de fondo si es necesario
+    --color: #C4CDC1;
     text-align: center;
 }
 
+ion-toolbar {
+    --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+    --color: #ECEEEB;
+}
 
+ion-content {
+    --background: #C4CDC1; 
+}
+
+.custom-card {
+    --background: #28363D; 
+}

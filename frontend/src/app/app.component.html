@@ -1,16 +1,12 @@
 <ion-app>
-  <ion-header *ngIf="mostrarBoton" [translucent]="true" class="ion-no-border">
-    <ion-toolbar>
-      <ion-button class="back-button" (click)="goBack()" fill="clear">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </ion-button>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button class="back-button" (click)="goBack()" fill="clear">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
 
   <ion-router-outlet></ion-router-outlet>
 
- <!-- El footer se mostrará en todas las páginas menos en las de registro, inicio y bienvenida -->
- <ion-footer *ngIf="mostrarFooter">
+  <!-- El footer se mostrará en todas las páginas menos en las de registro, inicio y bienvenida -->
+  <ion-footer *ngIf="mostrarFooter">
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-button routerLink="/principal">
@@ -18,7 +14,7 @@
           Inicio
         </ion-button>
       </ion-buttons>
-      <ion-buttons > 
+      <ion-buttons> 
         <div style="flex: 1; text-align: center;">
           <ion-button class="admin" *akoShowForRoles="[1]" routerLink="/admin">
             <ion-icon name="person-outline"></ion-icon>

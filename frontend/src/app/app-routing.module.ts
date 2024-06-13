@@ -28,11 +28,6 @@ const routes: Routes = [
     loadChildren: () => import('./principal/principal.module').then( m => m.PrincipalPageModule)
   },
   {
-    path: 'microfono',
-    canMatch: [isLoggedInGuard],
-    loadChildren: () => import('./microfono/microfono.module').then( m => m.MicrofonoPageModule)
-  },
-  {
     path: 'control',
     canMatch: [isLoggedInGuard],
     loadChildren: () => import('./control/control.module').then( m => m.ControlPageModule)
@@ -86,6 +81,11 @@ const routes: Routes = [
     path: 'account',
     canMatch: [isLoggedInGuard],
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'datos-sensores',
+    canMatch: [isLoggedInGuard],
+    loadChildren: () => import('./datos-sensores/datos-sensores.module').then( m => m.DatosSensoresPageModule)
   },
 ];
 

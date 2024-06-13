@@ -1,3 +1,8 @@
+h1 {
+  text-align: center;
+  color: #ECEEEB; 
+}
+
 $dpad-fg: #ddd;
 $dpad-fg-hover: #eee;
 $dpad-bg: transparent;
@@ -9,6 +14,12 @@ $dpad-arrow-move: 35%;
 
 body {
   background: #333; // Fondo oscuro para contrastar
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .set {
@@ -210,3 +221,14 @@ body {
 .d-pad.down a.down:before { border-top-color: #333; }
 .d-pad.left a.left:before { border-right-color: #333; }
 .d-pad.right a.right:before { border-left-color: #333; }
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.set {
+  margin-right: 20px; // Ajusta el espacio entre el D-Pad y la imagen
+}
+

@@ -1,4 +1,6 @@
 ion-header{
+    --background: var(--ion-color-primary); // Ajusta el color de fondo si es necesario
+    --color: #C4CDC1;
     text-align: center;
 }
 
@@ -6,6 +8,7 @@ ion-button{
     width: 30%;
     margin: 0 auto;
     margin-bottom: 10px;
+    --background: #658B6F;
   }
 
 ion-text {
@@ -29,3 +32,10 @@ ion-item {
     --inner-padding-end: 0;
 }
 
+ion-content {
+    --background: #C4CDC1; 
+}
+
+.custom-card {
+    --background: #28363D; 
+}

@@ -1,10 +1,23 @@
-ion-footer {
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    color: #DEE1DD;
+  }
+  
+  ion-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-}
-
-ion-button{
-    text-align:inherit;
-}
+  }
+  
+  ion-button {
+    text-align: inherit;
+  }
+  
+  body {
+    background-color: #f0f0f0; /* Cambia este color según tus necesidades */
+  }
+  
