@@ -1,10 +1,10 @@
-ion-header{
-    --background: var(--ion-color-primary); // Ajusta el color de fondo si es necesario
+ion-header {
+    --background: var(--ion-color-primary); /* Ajusta el color de fondo si es necesario */
     --color: #ECEEEB;
     text-align: center;
 }
 
-ion-button{
+ion-button {
     width: 30%;
     margin: 0 auto;
     margin-bottom: 10px;
@@ -14,19 +14,36 @@ ion-button{
 ion-item {
     --padding-start: 0;
     --inner-padding-end: 0;
-    --background: #28363D;
+    --background: transparent; /* Dejar transparente para heredar el fondo */
+    --border-width: 0;
+    --border-style: none;
+    --highlight-background: transparent;
+    --highlight-color-focused: transparent;
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
+    --box-shadow: none;
+}
+
+.custom-card {
+    --background: #2F575D; /* Color de fondo para el ion-card */
+    --color: #ECEEEB;
+}
+
+.custom-list {
+    --background: transparent; /* Fondo del ion-list */
+}
+
+.custom-list ion-item {
+    --background: #2F575D !important; /* Fondo de los ion-item */
+    --color: #ECEEEB !important; /* Color del texto en los ion-item */
+    --border-width: 0 !important; /* Eliminar el borde */
+}
+
+ion-content {
+    --background: #C4CDC1; 
 }
 
 ion-toolbar {
     --background: #2F3E46; /* Color de fondo para la barra de herramientas */
     --color: #DEE1DD;
 }
-
-.custom-card {
-    --background: #28363D; /* Color de fondo para el ion-card */
-}
-
-ion-content {
-    --background: #C4CDC1; 
-}
-  

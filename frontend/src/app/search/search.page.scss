@@ -12,11 +12,23 @@ ion-button{
 ion-item {
     --padding-start: 0;
     --inner-padding-end: 0;
-    --background: #28363D;
+    --background: transparent; /* Dejar transparente para heredar el fondo */
+    --border-width: 0;
+    --border-style: none;
+    --highlight-background: transparent;
+    --highlight-color-focused: transparent;
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
+    --box-shadow: none;
 }
 
 ion-content {
     --background: #C4CDC1; 
+}
+
+.custom-card {
+    --background: #2F575D; /* Color de fondo para el ion-card */
+    --color: #ECEEEB;
 }
 
 ion-toolbar {
