@@ -33,7 +33,16 @@ export class AppComponent {
   }
 
   goBack() {
-    this.location.back(); // Esto llevará al usuario a la página anterior
+    const currentUrl = this.router.url;
+    if (currentUrl === '/login' || currentUrl === '/register') {
+      this.router.navigate(['/home']);
+    }
+    if (currentUrl === '/admin' || currentUrl === '/datos-sensores' || currentUrl === '/control' || currentUrl === '/account') {
+      this.router.navigate(['/principal']);
+    }
+    if (currentUrl === '/see-users' || currentUrl === '/update-user' || currentUrl === '/search' || currentUrl === '/delete-user') {
+      this.router.navigate(['/admin']);
+    }
   }
 
   private getCookie(name: string): string {
