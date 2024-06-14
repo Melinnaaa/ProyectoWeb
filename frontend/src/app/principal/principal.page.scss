@@ -27,8 +27,8 @@ ion-button{
 
 // Para que los botones no se solapen con el footer
 ion-content {
-    --padding-bottom: 5%;
-    --background: #C4CDC1; 
+    --padding-bottom: 10%;
+    --background: #C4CDC1;
 }
 
 ion-header{
@@ -39,4 +39,7 @@ ion-toolbar {
     --background: #2F3E46; /* Color de fondo para la barra de herramientas */
     --color: #ECEEEB;
 }
-  
+
+.card{
+    --color: #2F575D;
+}
