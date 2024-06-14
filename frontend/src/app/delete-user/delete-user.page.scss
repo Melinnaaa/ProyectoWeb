@@ -1,16 +1,55 @@
-ion-header{
+ion-header {
+    --background: var(--ion-color-primary); /* Ajusta el color de fondo si es necesario */
+    --color: #ECEEEB;
     text-align: center;
-}
+  }
 
-ion-button{
+  ion-button {
     width: 30%;
     margin: 0 auto;
     margin-bottom: 10px;
-}
+    --background: #658B6F;
+  }
 
-ion-item {
+  ion-item {
     --padding-start: 0;
     --inner-padding-end: 0;
-}
+    --background: transparent; /* Dejar transparente para heredar el fondo */
+    --border-width: 0;
+    --border-style: none;
+    --highlight-background: transparent;
+    --highlight-color-focused: transparent;
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
+    --box-shadow: none;
+  }
 
+  .custom-card {
+    --background: #2F575D; /* Color de fondo para el ion-card */
+    --color: #ECEEEB;
+  }
 
+  .user-list {
+    --background: transparent; /* Fondo del contenedor de usuarios */
+  }
+
+  .user-item {
+    --background: #2F575D !important; /* Fondo de los elementos de usuario */
+    --color: #ECEEEB !important; /* Color del texto en los elementos de usuario */
+    --border-width: 0 !important; /* Eliminar el borde */
+    --box-shadow: none !important; /* Eliminar la sombra */
+    border-bottom: none !important; /* Asegura que no haya bordes en la parte inferior */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  ion-content {
+    --background: #C4CDC1;
+    --padding-bottom: 10%;
+  }
+
+  ion-toolbar {
+    --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+    --color: #DEE1DD;
+  }

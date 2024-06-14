@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="custom-card">
     <ion-card-content>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label position="floating">Ingrese Rut del usuario</ion-label>
         <ion-input [(ngModel)]="userId"></ion-input>
       </ion-item>
@@ -16,22 +16,20 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="custom-card">
     <ion-card-header>
       <ion-card-title>Lista de Usuarios</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <div *ngFor="let user of users">
-          <ion-item lines="none">
-            <ion-label>
-              <h3>Nombre: {{ user.Nombre }}</h3>
-              <p>Rut: {{ user.Rut }}</p>
-              <p>Email: {{ user.Correo_electronico }}</p>
-            </ion-label>
-          </ion-item>
+      <div class="user-list">
+        <div class="user-item" *ngFor="let user of users">
+          <ion-label>
+            <h3>Nombre: {{ user.Nombre }}</h3>
+            <p>Rut: {{ user.Rut }}</p>
+            <p>Email: {{ user.Correo_electronico }}</p>
+          </ion-label>
         </div>
-      </ion-list>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

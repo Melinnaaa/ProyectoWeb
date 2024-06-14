@@ -3,6 +3,7 @@
     top: 10px;
     left: 10px;
     z-index: 1000; /* Asegúrate de que el botón esté por encima de otros elementos */
+    color: #DEE1DD;
   }
   
   ion-footer {
@@ -10,6 +11,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    --background: #2F575D;
   }
   
   ion-button {
@@ -20,3 +22,7 @@
     background-color: #f0f0f0; /* Cambia este color según tus necesidades */
   }
   
+.card {
+  --background: #2F575D;
+  background-color: #2F575D;
+}

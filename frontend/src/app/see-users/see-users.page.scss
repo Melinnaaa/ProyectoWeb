@@ -1,5 +1,31 @@
-ion-header{
-    text-align: center;
+ion-header {
+  --background: var(--ion-color-primary); /* Ajusta el color de fondo si es necesario */
+  --color: #C4CDC1;
+  text-align: center;
 }
 
+ion-toolbar {
+  --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+  --color: #ECEEEB;
+}
 
+ion-content {
+  --background: #C4CDC1;
+  --padding-bottom: 10%;
+}
+
+.custom-list {
+  background-color: #C4CDC1; /* Aplica el color de fondo a toda la lista */
+  padding: 10px; /* Añade un poco de relleno al contenedor de la lista */
+}
+
+.custom-card {
+  background-color: #2F575D;
+  margin: 15px; /* Aumenta el margen para que el color de fondo de la página sea visible alrededor de las tarjetas */
+  box-shadow: none; /* Elimina la sombra para un borde más limpio */
+  border-radius: 10px; /* Ajusta el radio del borde para que sea más redondeado */
+}
+
+ion-card {
+  background-color: transparent; /* Hace transparente el fondo de las tarjetas para que hereden el color de la lista */
+}
