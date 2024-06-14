@@ -9,37 +9,25 @@ img {
 
 h2{
     text-align: center;
-    color: #28363D
-}
-
-ion-header, ion-title{
-    --background: var(--ion-color-primary); // Ajusta el color de fondo si es necesario
-    --color: #ECEEEB;
-    text-align: center;
 }
 
 ion-button{
     width: 30%;
     margin: 0 auto;
     margin-bottom: 10px;
-    --background: #658B6F;
+}
+
+ion-title{
+    text-align: center;
 }
 
 // Para que los botones no se solapen con el footer
 ion-content {
-    --padding-bottom: 10%;
-    --background: #C4CDC1;
+    --padding-bottom: 5%;
 }
 
 ion-header{
     position: relative;
 }
 
-ion-toolbar {
-    --background: #2F3E46; /* Color de fondo para la barra de herramientas */
-    --color: #ECEEEB;
-}
-
-.card{
-    --color: #2F575D;
-}
+  

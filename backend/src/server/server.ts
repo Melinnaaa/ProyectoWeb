@@ -7,6 +7,7 @@ import loginRoutes from '../routes/login.routes'
 import logoutRoutes from '../routes/logout.routes'
 import db from '../db/connection';
 import sessionMiddleware from '../middlewares/session.middleware';
+import sensorRoutes from '../routes/sensor.routes';
 
 
 class Server {
@@ -33,6 +34,7 @@ class Server {
     this.app.use('/api/signup', registerRoutes);
     this.app.use('/api/signin', loginRoutes);
     this.app.use('/api/logout', logoutRoutes);
+    this.app.use('/api/sensors', sensorRoutes);
   }
 
   private middlewares() {

@@ -5,14 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card class="custom-card">
+  <ion-card>
     <ion-card-header>
       <ion-card-title>Distancia</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
       <p>Distancia a la que se encuentra el robot de su mascota:</p>
+      <p *ngIf="sensorData">Distancia: {{ sensorData.distance }} cm</p>
+      <p *ngIf="!sensorData">Cargando datos...</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
-

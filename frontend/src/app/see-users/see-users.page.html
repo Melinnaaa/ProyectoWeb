@@ -5,8 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list class="custom-list">
-    <ion-card class="custom-card" *ngFor="let user of users">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Usuarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-card *ngFor="let user of users">
       <ion-card-header>
         <ion-card-title>{{ user.Nombre }}</ion-card-title>
       </ion-card-header>
@@ -18,3 +24,4 @@
     </ion-card>
   </ion-list>
 </ion-content>
+

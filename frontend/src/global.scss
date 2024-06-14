@@ -36,11 +36,18 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
-/* Estilos para el footer */
-ion-footer {
-    ion-toolbar {
-      --background: #2F3E46; 
-      --color: #FFFFFF; 
-    }
-  }
-  
+@import 'src/theme/variables';
+
+html, body {
+  background-color: var(--ion-background-color);
+}
+
+ion-content {
+  --background: var(--ion-background-color);
+}
+
+ion-card {
+  --background: var(--ion-card-background-color);
+  color: #fff; /* Asegura que el texto dentro de las tarjetas sea legible */
+  margin: 16px; /* Ajusta según sea necesario */
+}
