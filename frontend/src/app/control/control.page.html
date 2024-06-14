@@ -3,12 +3,12 @@
   <div class="content-wrapper">
     <div class="set">
       <nav class="d-pad">
-        <a class="up" href="#"></a>
-        <a class="right" href="#"></a>
-        <a class="down" href="#"></a>
-        <a class="left" href="#"></a>  
+        <a class="up" href="#" (click)="sendCommand('FORWARD')"></a>
+        <a class="right" href="#" (click)="sendCommand('RIGHT')"></a>
+        <a class="down" href="#" (click)="sendCommand('BACKWARD')"></a>
+        <a class="left" href="#" (click)="sendCommand('LEFT')"></a>  
       </nav>
     </div>
-    <img src="https://t1.ea.ltmcdn.com/es/posts/8/7/8/como_dejar_a_un_perro_solo_en_casa_20878_600.jpg" alt="Room with dog">
+    <img id="videoStream" width="640" height="480" src="http://192.168.1.106:3001/video_feed" />
   </div>
 </ion-content>

@@ -7,8 +7,8 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <h2>Bienvenido(a) {{ userName }}</h2>
   <h2>Livestream</h2>
-  <img src="https://t1.ea.ltmcdn.com/es/posts/8/7/8/como_dejar_a_un_perro_solo_en_casa_20878_600.jpg" alt="imagen temporal livestream"/>
+  <img id="videoStream" width="640" height="480" src="http://192.168.1.106:3001/video_feed" />
 
-  <ion-button expand="full" [routerLink]="['/datos-sensores']">Ver datos sensores</ion-button> 
+  <ion-button expand="full" [routerLink]="['/datos-sensores']">Ver datos sensores</ion-button>
   <ion-button expand="full" [routerLink]="['/control']">Controla al robot</ion-button>
 </ion-content>
