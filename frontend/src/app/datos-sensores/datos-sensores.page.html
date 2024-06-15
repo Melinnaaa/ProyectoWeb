@@ -16,4 +16,16 @@
       <p *ngIf="!sensorData">Cargando datos...</p>
     </ion-card-content>
   </ion-card>
+
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Obstaculos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Información sobre obstáculos</p>
+      <p *ngIf="sensorData">Obstáculo: {{ sensorData.irValue === 0 ? 'Detectado' : 'No detectado' }}</p>
+      <p *ngIf="!sensorData">Cargando datos...</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
