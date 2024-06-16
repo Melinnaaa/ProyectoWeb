@@ -16,6 +16,7 @@ exports.login = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const user_service_1 = __importDefault(require("../services/user.service"));
 const dotenv_1 = __importDefault(require("dotenv"));
+const session = require('express-session');
 // Cargar las variables de entorno desde el archivo .env
 dotenv_1.default.config();
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -39,10 +40,13 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const user = yield user_service_1.default.login(email, password);
         if (user) {
             // Guardamos la información del usuario en la sesión
-            req.session.user = user;
+            req.session.user = { id: user.user.Rut, username: user.user.Correo_electronico, role: user.user.role };
+            req.session.authenticated = true;
+            const session = req.session;
             // Si el login es exitoso, generar un token
             const token = createToken(user);
-            res.json({ user, token });
+            console.log(req.session.user);
+            res.json({ user, token, session });
         }
         else {
             // Si las credenciales son incorrectas

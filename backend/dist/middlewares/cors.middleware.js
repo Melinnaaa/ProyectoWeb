@@ -1,8 +1,20 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const cors_1 = __importDefault(require("cors"));
-const corsMiddleware = (0, cors_1.default)();
-exports.default = corsMiddleware;
+exports.setupCors = void 0;
+// Permitir cualquier origen de localhost
+function setupCors(req, res, next) {
+    const origin = req.headers.origin;
+    if (origin && origin.startsWith('http://localhost')) {
+        res.header('Access-Control-Allow-Origin', origin);
+    }
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    if (req.method === 'OPTIONS') {
+        res.sendStatus(200);
+    }
+    else {
+        next();
+    }
+}
+exports.setupCors = setupCors;
