@@ -1,5 +1,11 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
-  "type": "angular"
+  "name": "mascotapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "server": {
+    "port": 8100,
+    "host": "0.0.0.0"
+  }
 }

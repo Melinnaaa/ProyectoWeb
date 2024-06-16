@@ -1,49 +1,23 @@
-.home-content {
-  h1 {
-    text-align: center;
-    color: #28363D;
-  }
-
-  img {
-    width: 40%; /* Establece el ancho de la imagen al 40% del contenedor */
-    max-width: none; /* Elimina la restricción del tamaño máximo */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
-    border-radius: 20px; /* Ajusta el radio del borde para la imagen */
-    margin-bottom: 24px; /* Ajusta el margen inferior de la imagen */
-  }
-
-  p {
-    text-align: center;
-    color: #28363D;
-  }
-
-  .login-button {
-    width: 30%;
-    margin: 0 auto;
-    --background: #658B6F;
-    color: black;
-
-    &:hover {
-      --background: #4a634f; /* Color más oscuro */
-    }
-  }
-
-  .register-button {
-    width: 30%;
-    margin: 0 auto;
-    --background: #8aa892; /* Un tono más claro dentro de la misma gama */
-    color: #1b2429;
-
-    &:hover {
-      --background: #4a634f; /* Color más oscuro */
-    }
-  }
+h1 {
+  text-align: center;
 }
 
-ion-content {
-  --background: #C4CDC1;
-  --padding-bottom: 10%;
-  --padding-top: 5%;
+img {
+  width: 50%; /* Establece el ancho de la imagen al 50% del contenedor, ajusta según sea necesario */
+  max-width: 300px; /* O un tamaño máximo que prefieras */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block; /* Hace que la imagen sea un bloque para permitir el centrado automático */
+  border-radius: 20px; /* Ajusta el radio del borde para la imagen */
+  margin-bottom: 24px; /* Ajusta el margen inferior de la imagen */
+}
+
+p{
+  text-align: center;
+  color: grey;
+}
+
+ion-button {
+  width: 30%;
+  margin: 0 auto;
 }

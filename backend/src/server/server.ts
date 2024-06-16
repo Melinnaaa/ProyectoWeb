@@ -23,7 +23,7 @@ class Server {
   }
 
   listen() {
-    this.app.listen(Number(this.port), '0.0.0.0', () => {
+    this.app.listen(this.port, () => {
       console.log(`Aplicación corriendo en el puerto ${this.port}`);
     });
   }
@@ -44,8 +44,8 @@ class Server {
     // Configuración de express-session
     this.app.use(sessionMiddleware);
 
-    // Parseamos el body
-    this.app.use(express.json());
+     // Parseamos el body
+     this.app.use(express.json());
   }
 
   private async dbConnection() {

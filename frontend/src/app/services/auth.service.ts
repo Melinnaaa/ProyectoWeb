@@ -2,22 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private userUrl: string;
+
   private loginUrl = 'http://localhost:3000/api/signin';
   private roleSubject = new BehaviorSubject<number>(0);
   roleChanges = this.roleSubject.asObservable();
 
   constructor(private http: HttpClient) {
+    this.userUrl = environment.endpoint;
     const storedRole = Number(localStorage.getItem('role'));
     this.roleSubject.next(storedRole);
   }
 
   login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(this.loginUrl, { email, password }, { withCredentials: true })
+    return this.http.post<any>(`${this.userUrl}/signin`, { email, password }, { withCredentials: true })
       .pipe(
         map(response => {
           if (response.token) {
