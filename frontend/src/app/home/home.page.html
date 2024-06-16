@@ -1,8 +1,7 @@
 <ion-content [fullscreen]="true" class="home-content">
   <h1>Bienvenido a Tu Mascotapp</h1>
-  <img src="assets/portada.jpg" alt="Cachorro" />
-  <ion-button expand="block" (click)="goToLogin()">Iniciar sesión</ion-button>
-  <p class="account-prompt">Si no posees cuenta, puedes registrarte</p>
-  <ion-button expand="block" (click)="goToRegister()" fill="clear">Crear una nueva cuenta</ion-button>
-
+  <img src="assets/nuevoperro.jpg" alt="Cachorro" />
+  <ion-button expand="block" class="login-button" (click)="goToLogin()">Iniciar sesión</ion-button>
+  <p class="account-prompt">Si no posees una cuenta, puedes registrarte</p>
+  <ion-button expand="block" class="register-button" (click)="goToRegister()" fill="clear">Crear una nueva cuenta</ion-button>
 </ion-content>
