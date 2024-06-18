@@ -1,6 +1,15 @@
+img {
+  width: 80%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  margin: 0 auto 24px;
+  max-width: none;
+}
+
 h1 {
   text-align: center;
-  color: #ECEEEB;
+  color: #28363D;
 }
 
 $dpad-fg: #ddd;
@@ -20,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  --background: #C4CDC1; /* Cambia el color de fondo de la página */
 }
 
 .set {
@@ -230,6 +240,27 @@ body {
 
 .set {
   margin-right: 20px; // Ajusta el espacio entre el D-Pad y la imagen
+}
+
+ion-header {
+  --background: var(--ion-color-primary); // Ajusta el color de fondo si es necesario
+  --color: #ECEEEB;
+}
+
+ion-title {
+  text-align: center;
+}
+
+ion-toolbar {
+  --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+  --color: #ECEEEB;
+}
+
+ion-button {
+  width: 30%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  --background: #658B6F;
 }
 
 @media (max-width: 768px) {
