@@ -31,7 +31,7 @@ class Server {
         this.dbConnection();
     }
     listen() {
-        this.app.listen(this.port, () => {
+        this.app.listen(Number(this.port), '0.0.0.0', () => {
             console.log(`Aplicación corriendo en el puerto ${this.port}`);
         });
     }

@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  color: #ECEEEB; 
+  color: #ECEEEB;
 }
 
 $dpad-fg: #ddd;
@@ -13,7 +13,7 @@ $dpad-arrow-shift: 5px;
 $dpad-arrow-move: 35%;
 
 body {
-  background: #333; // Fondo oscuro para contrastar
+  background: #333;
 }
 
 .home-content {
@@ -32,19 +32,19 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
-  border-radius: 0%; // Sin borde redondeado
+  border-radius: 0%;
   overflow: hidden;
-  background: transparent; // Fondo transparente
+  background: transparent;
   &:before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    border-radius: 0%; // Sin borde redondeado
+    border-radius: 0%;
     transform: translate(-50%, -50%);
     width: 66.6%;
     height: 66.6%;
-    background: transparent; // Fondo transparente
+    background: transparent;
   }
   &:after {
     content: '';
@@ -55,8 +55,8 @@ body {
     height: 20%;
     top: 50%;
     left: 50%;
-    background: transparent; // Fondo transparente
-    border-radius: 0%; // Sin borde redondeado
+    background: transparent;
+    border-radius: 0%;
     transform: translate(-50%, -50%);
     transition: all .25s;
     cursor: pointer;
@@ -232,3 +232,41 @@ body {
   margin-right: 20px; // Ajusta el espacio entre el D-Pad y la imagen
 }
 
+@media (max-width: 768px) {
+  .home-content {
+    padding: 20px;
+  }
+
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .d-pad {
+    width: 150px;
+    height: 150px;
+  }
+
+  .set {
+    margin: 0 0 20px 0; // Ajusta el espacio entre el D-Pad y la imagen
+  }
+
+  #videoStream {
+    width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .d-pad {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+}

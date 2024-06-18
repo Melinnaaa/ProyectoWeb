@@ -1,9 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 
-// Permitir cualquier origen de localhost
+// Lista de orígenes permitidos
+const allowedOrigins = ['http://localhost:4200', 'http://localhost:8100', 'http://186.78.106.238:8100'];
+
 export function setupCors(req: Request, res: Response, next: NextFunction) {
   const origin = req.headers.origin as string;
-  if (origin && origin.startsWith('http://localhost')) {
+  if (allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
   }
   res.header('Access-Control-Allow-Credentials', 'true');

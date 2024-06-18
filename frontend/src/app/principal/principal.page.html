@@ -7,8 +7,14 @@
 <ion-content [fullscreen]="true" class="ion-padding">
   <h2>Bienvenido(a) {{ userName }}</h2>
   <h2>Livestream</h2>
-  <img id="videoStream" width="640" height="480" src="http://192.168.1.106:3001/video_feed" />
+  <img *ngIf="videoSrc" [src]="videoSrc" width="640" height="480" />
 
+  <ion-button expand="full" (click)="toggleStreaming()">
+    {{ streaming ? 'Detener Streaming' : 'Iniciar Streaming' }}
+  </ion-button>
+  <ion-button expand="full" (click)="toggleDetection()">
+    {{ detecting ? 'Detener Detección' : 'Iniciar Detección' }}
+  </ion-button>
   <ion-button expand="full" [routerLink]="['/datos-sensores']">Ver datos sensores</ion-button>
   <ion-button expand="full" [routerLink]="['/control']">Controla al robot</ion-button>
 </ion-content>

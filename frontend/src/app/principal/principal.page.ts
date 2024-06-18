@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-principal',
@@ -7,11 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalPage implements OnInit {
   userName: string = '';
-  constructor() { }
+  videoSrc: string = '';
+  streaming: boolean = false;
+  detecting: boolean = false;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     const fullName = localStorage.getItem('userName') || 'Usuario';
     this.userName = fullName.split(' ')[0];
   }
 
+  toggleStreaming() {
+    if (this.streaming) {
+      this.http.get('http://192.168.1.106:3001/api/stop_stream').subscribe(() => {
+        this.streaming = false;
+        this.videoSrc = '';
+      });
+    } else {
+      this.http.get('http://192.168.1.106:3001/api/start_stream').subscribe(() => {
+        this.streaming = true;
+        this.detecting = false;
+        this.videoSrc = 'http://192.168.1.106:3001/video_feed';
+      });
+    }
+  }
+
+  toggleDetection() {
+    if (this.detecting) {
+      this.http.get('http://192.168.1.106:3001/api/stop_detection').subscribe(() => {
+        this.detecting = false;
+      });
+    } else {
+      this.http.get('http://192.168.1.106:3001/api/start_detection').subscribe(() => {
+        this.detecting = true;
+        this.streaming = false; 
+        this.videoSrc = ''; 
+      });
+    }
+  }
 }
