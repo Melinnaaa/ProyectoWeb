@@ -1,26 +1,66 @@
-p{
+p {
     text-align: center;
     color: grey;
   }
   
-ion-button{
+  .account-prompt {
+    color: #28363D; /* Color específico para el párrafo "Si no posees cuenta, puedes registrarte" */
+  }
+  
+  .error {
+    color: red; /* Color rojo para los mensajes de error */
+  }
+  
+  ion-button {
     width: 30%;
     margin: 0 auto;
     margin-bottom: 10px;
-}
-
-ion-item{
+    --background: #658B6F;
+  }
+  
+  ion-item {
     margin: 0 auto;
     margin-bottom: 1%;
-    border-radius: 20px; 
-}
-
-.error {
-    color: red;
-}
-
-ion-title{
+    border-radius: 20px;
+    --background: #2F575D;
+  }
+  
+  ion-title {
     margin-top: 3%;
     margin-bottom: 3%;
     text-align: center;
-}
+    color: #2F3E46;
+  }
+  
+  ion-content {
+    --padding-bottom: 10%;
+    --background: #C4CDC1;
+  }
+  
+  ion-toolbar {
+    --background: #2F3E46; /* Color de fondo para la barra de herramientas */
+    --color: #ECEEEB;
+    text-align: center;
+  }
+
+  .login-button {
+    width: 30%;
+    margin: 0 auto;
+    --background: #658B6F;
+    color: black;
+
+    &:hover {
+      --background: #4a634f; /* Color más oscuro */
+    }
+  }
+
+  .register-button {
+    width: 30%;
+    margin: 0 auto;
+    --background: #8aa892; /* Un tono más claro dentro de la misma gama */
+    color: #1b2429;
+
+    &:hover {
+      --background: #4a634f; /* Color más oscuro */
+    }
+  }
