@@ -54,6 +54,8 @@ Antes de comenzar, necesitarás tener instalado Node.js en tu máquina. Puedes d
 * cd backend
 * npm install -g nodemon
 * nodemon dist/index.js
+* En otra terminal en backend
+  * tsc --watch
 El backend se ejecutará en el puerto 3000.
 
 ### 2. Iniciar el frontend
