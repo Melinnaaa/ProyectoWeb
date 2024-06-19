@@ -1,4 +1,13 @@
 ion-title{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    color:#28363D;
+}
+
+ion-toolbar {
+    --background: #2F3E46; 
+    --color: #ECEEEB;
     text-align: center;
 }
 
@@ -10,12 +19,22 @@ ion-input{
 ion-item{
     margin-bottom: 1%;
     border-radius: 20px;
+    --background: #2F575D;
+}
+
+ion-content {
+    --padding-bottom: 7%;
+    --background: #C4CDC1;
 }
 
 ion-button{
     width: 40%;
     margin: 0 auto;
     margin-bottom: 20px;
+    --background: #658B6F;
+    &:hover {
+        --background: #628b6b; 
+    }
 }
 
 .error{
