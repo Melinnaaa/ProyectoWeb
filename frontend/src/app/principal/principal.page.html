@@ -15,6 +15,9 @@
   <ion-button expand="full" (click)="toggleDetection()">
     {{ detecting ? 'Detener Detección' : 'Iniciar Detección' }}
   </ion-button>
+  <ion-button expand="full" (click)="toggleAStar()">
+    {{ astar ? 'Detener A*' : 'Iniciar A*' }}
+  </ion-button>
   <ion-button expand="full" [routerLink]="['/datos-sensores']">Ver datos sensores</ion-button>
   <ion-button expand="full" [routerLink]="['/control']">Controla al robot</ion-button>
 </ion-content>

@@ -3,7 +3,7 @@ import 'express-session';
 
 declare module 'express-serve-static-core' {
   interface Request {
-    user?: any; // Puedes especificar un tipo más específico si tienes una interfaz de usuario definida
+    user?: any; 
   }
 }
 
