@@ -15,7 +15,7 @@ export class UserService {
 
   saveUser(user: User, captchaToken: string): Observable<any> {
     const requestBody = { ...user, captchaToken };
-    return this.http.post(`${this.userUrl}`, requestBody);
+    return this.http.post(`${this.userUrl}/signup`, requestBody);
   }
 
   getUsers(): Observable<User[]> {
