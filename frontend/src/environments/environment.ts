@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://localhost:3000/api'
+  endpoint: 'http://localhost:3000/api',
+  robot: 'http://192.168.1.106:3001/api'
 };
 
 /*

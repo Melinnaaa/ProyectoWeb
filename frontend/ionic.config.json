@@ -1,7 +1,8 @@
 {
   "name": "mascotapp",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular",
   "server": {

@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-control',
@@ -8,11 +9,14 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./control.page.scss'],
 })
 export class ControlPage implements AfterViewInit, OnDestroy {
-  private apiUrl = 'http://192.168.1.106:3001/api/control'; // Reemplaza con la IP de tu Raspberry Pi
-  private keepAliveUrl = 'http://192.168.1.106:3001/api/keep-alive'; // URL para enviar la señal de control activo
   private keepAliveSubscription: Subscription | null = null; // Inicializar con null
+  private robotUrl: string;
+  videoSrc: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.robotUrl = environment.robot;
+    this.videoSrc = `${this.robotUrl}/video_feed`;
+  }
 
   ngAfterViewInit() {
     this.setupEventListeners();
@@ -45,7 +49,7 @@ export class ControlPage implements AfterViewInit, OnDestroy {
   }
 
   sendCommand(command: string): void {
-    this.http.post(this.apiUrl, { command: command }).subscribe(response => {
+    this.http.post(`${this.robotUrl}/control`, { command: command }).subscribe(response => {
       console.log('Comando enviado:', response);
     }, error => {
       console.error('Error al enviar el comando:', error);
@@ -54,7 +58,7 @@ export class ControlPage implements AfterViewInit, OnDestroy {
 
   startKeepAlive(): void {
     this.keepAliveSubscription = interval(1000).subscribe(() => {
-      this.http.post(this.keepAliveUrl, {}).subscribe(response => {
+      this.http.post(`${this.robotUrl}/keep-alive`, {}).subscribe(response => {
         console.log('Keep-alive signal sent:', response);
       }, error => {
         console.error('Error sending keep-alive signal:', error);

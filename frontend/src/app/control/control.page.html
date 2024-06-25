@@ -14,6 +14,6 @@
         <a class="left" href="#" (click)="sendCommand('LEFT')"></a>  
       </nav>
     </div>
-    <img id="videoStream" src="http://192.168.1.106:3001/video_feed" />
+    <img id="videoStream" [src]="videoSrc" />
   </div>
 </ion-content>

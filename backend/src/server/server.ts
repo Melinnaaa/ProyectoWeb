@@ -1,14 +1,13 @@
 import express, { Application } from 'express';
-import {setupCors} from '../middlewares/cors.middleware';
+import { setupCors } from '../middlewares/cors.middleware';
 import rootRoutes from '../routes/root.routes';
 import userRoutes from '../routes/users.routes';
-import registerRoutes from '../routes/register.routes'
-import loginRoutes from '../routes/login.routes'
-import logoutRoutes from '../routes/logout.routes'
+import registerRoutes from '../routes/register.routes';
+import loginRoutes from '../routes/login.routes';
+import logoutRoutes from '../routes/logout.routes';
 import db from '../db/connection';
 import sessionMiddleware from '../middlewares/session.middleware';
 import sensorRoutes from '../routes/sensor.routes';
-
 
 class Server {
   private app: Application;

@@ -15,7 +15,7 @@ export class UserService {
 
   saveUser(user: User, captchaToken: string): Observable<any> {
     const requestBody = { ...user, captchaToken };
-    return this.http.post(`${this.userUrl}/signup`, requestBody);
+    return this.http.post(`${this.userUrl}/signup`, requestBody, { withCredentials: true });
   }
 
   getUsers(): Observable<User[]> {
@@ -23,7 +23,7 @@ export class UserService {
     console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     console.log(headers);
-    return this.http.get<User[]>(`${this.userUrl}/users`, { headers, withCredentials: true});
+    return this.http.get<User[]>(`${this.userUrl}/users`, { headers, withCredentials: true });
   }
 
   getUserById(userId: string): Observable<any> {
@@ -31,7 +31,7 @@ export class UserService {
     console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     console.log(headers);
-    return this.http.get<User[]>(`${this.userUrl}/users${userId}`, { headers, withCredentials: true});
+    return this.http.get<User[]>(`${this.userUrl}/users${userId}`, { headers, withCredentials: true });
   }
 
   deleteUserById(userId: string): Observable<any> {
@@ -39,7 +39,7 @@ export class UserService {
     console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     console.log(headers);
-    return this.http.delete<User[]>(`${this.userUrl}/users${userId}`, { headers, withCredentials: true});
+    return this.http.delete<User[]>(`${this.userUrl}/users${userId}`, { headers, withCredentials: true });
   }
 
   updateUserById(userId: string, user: User): Observable<any> {
@@ -47,6 +47,6 @@ export class UserService {
     console.log(token);
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     console.log(headers);
-    return this.http.put<User[]>(`${this.userUrl}/users${userId}`, user, { headers, withCredentials: true});
+    return this.http.put<User[]>(`${this.userUrl}/users${userId}`, user, { headers, withCredentials: true });
   }
 }

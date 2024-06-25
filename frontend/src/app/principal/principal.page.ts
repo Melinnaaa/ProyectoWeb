@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-principal',
@@ -12,8 +13,11 @@ export class PrincipalPage implements OnInit {
   streaming: boolean = false;
   detecting: boolean = false;
   astar: boolean = false;
+  private robotUrl: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.robotUrl = environment.robot;
+   }
 
   ngOnInit() {
     const fullName = localStorage.getItem('userName') || 'Usuario';
@@ -22,27 +26,27 @@ export class PrincipalPage implements OnInit {
 
   toggleStreaming() {
     if (this.streaming) {
-      this.http.get('http://192.168.1.106:3001/api/stop_stream').subscribe(() => {
+      this.http.get(`${this.robotUrl}/stop_stream`).subscribe(() => {
         this.streaming = false;
         this.videoSrc = '';
       });
     } else {
-      this.http.get('http://192.168.1.106:3001/api/start_stream').subscribe(() => {
+      this.http.get(`${this.robotUrl}/start_stream`).subscribe(() => {
         this.streaming = true;
         this.detecting = false;
         this.astar = false;
-        this.videoSrc = 'http://192.168.1.106:3001/video_feed';
+        this.videoSrc = `${this.robotUrl}/video_feed`;
       });
     }
   }
 
   toggleDetection() {
     if (this.detecting) {
-      this.http.get('http://192.168.1.106:3001/api/stop_detection').subscribe(() => {
+      this.http.get(`${this.robotUrl}/stop_detection`).subscribe(() => {
         this.detecting = false;
       });
     } else {
-      this.http.get('http://192.168.1.106:3001/api/start_detection').subscribe(() => {
+      this.http.get(`${this.robotUrl}/start_detection`).subscribe(() => {
         this.detecting = true;
         this.streaming = false;
         this.astar = false;
@@ -53,11 +57,11 @@ export class PrincipalPage implements OnInit {
 
   toggleAStar() {
     if (this.astar) {
-      this.http.get('http://192.168.1.106:3001/api/stop_astar').subscribe(() => {
+      this.http.get(`${this.robotUrl}/stop_astar`).subscribe(() => {
         this.astar = false;
       });
     } else {
-      this.http.get('http://192.168.1.106:3001/api/start_astar').subscribe(() => {
+      this.http.get(`${this.robotUrl}/start_astar`).subscribe(() => {
         this.astar = true;
         this.streaming = false;
         this.detecting = false;

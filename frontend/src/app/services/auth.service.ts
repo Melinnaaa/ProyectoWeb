@@ -10,7 +10,6 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private userUrl: string;
 
-  private loginUrl = 'http://localhost:3000/api/signin';
   private roleSubject = new BehaviorSubject<number>(0);
   roleChanges = this.roleSubject.asObservable();
 

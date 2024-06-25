@@ -111,3 +111,7 @@ typings/
 
 # TernJS port file
 .tern-port
+
+# Android
+android/
+www/
